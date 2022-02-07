@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Election Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 80px;
+        height: 80px;
+        margin-left: 45%;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 1s linear infinite;
+      }
+      footer{
+        margin-bottom: 2%;
+        background-color: maroon;
+        color:mistyrose;
+      }
+      @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .header
+      {
+        background-color:crimson;
+        margin-top:-20px;
+      }
+      .project-title
+      {
+        text-align: center;
+        margin-top: -10px;
+        width: 100%;
+        color: mintcream;
+        background-color:maroon;
+      }
+      .table-head
+      {
+        background-color: navajowhite;
+      }
+      .table-body
+      {
+        background-color:cornflowerblue;
+        color:maroon;
+      }
+      </style>
+      
+  </head>
+  <body style='background-color:cornsilk;'>
+    <div class='header'>
+      <h1 class="text-center">ETHEREUM BASED SMART CONTRACTS</h1>
+      <h3 class="text-center">E Voting</h3>
+    </div>
+    <div class="container" style="width:100%;">
+      <div class="row">
+        <h3 class='project-title'>
+          E-Voting Using Smart Contracts Over Ethereum Blockchain Framework
+        </h3>
+      </div>
+          <br/>
+          <div id="loader">
+            <p class="text-center">
+              <h3 style="text-align: center;">Loading...</h3>
+              
+              <div class="loader" style="align-content: center;"></div>
+              </p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table table-body">
+              <thead>
+                <tr class='table-head'>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">
+              </tbody>
+            </table>
+            <hr/>
+            <form onSubmit="App.castVote(); return false;">
+              <div class="form-group">
+                <label for="candidatesSelect">Select Candidate</label>
+                <select class="form-control" id="candidatesSelect">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-danger btn-lg">Cast Your Vote</button>
+              <hr />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="accountAddress" class="text-center"></footer>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min1.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
